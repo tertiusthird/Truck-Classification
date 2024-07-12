@@ -10,7 +10,7 @@ Carregando duas base de dados, uma com dados de todos os anos anteriores, e a se
 
 Foi testado 3 algoritmos de aprendizagem de máquina, sendo eles regressão logística, random forest e xgboost. Todos passaram por um busca em grade com valização cruzada 10 folds. Os resultados da validação cruzadas passam pelo teste estatístico de friedman para verficiar se há diferença estatística significativa entre as métricas avaliadas, e sendo o caso, realizar o pós teste de Nemenyi. Como temos classes desbalanceadas, alguns modelos podem ter dificuldades de prever a classe minoritária, que foi o caso da regressão logística. Como o Random Forest e o XGBoost tiveram bons resultados na métrica Recall (Sensibilidade do modelo) e queremos otimizar os Verdadeiros positivos, está é a váriavel que devemos otimizar. Utilizei de feature_importance do random forest para identificar as features mais importantes da nossa base de dados. Também defini uma métrica de negócios, que foi a matriz de custos, para calcular os custos totais das predições dos dois melhores modelos. Também tentei aplicar um threshold na predição do melhor modelo de XGBOOST para maximização do recall, mas o melhor threshold foi muito próximo do threshold default (0.494949 contra 0.5), não trazendo melhoras significativas para o nosso modelo.
 
-Conclusão:
+**Conclusão:**
 
 No modelo de Random Forest para o ano de 2022, temos **Recall: 91,47% (343 VERDADEIROS POSITIVOS, 32 FALSOS NEGATIVOS) e 298 FALSOS POSITIVOS**.
 No modelo XGBOOST para o ano de 2022, temos **Recall: 89,60% (336 VERDADEIROS POSITIVOS, 39 FALSOS NEGATIVOS) e 144 FALSOS POSITIVOS**.
