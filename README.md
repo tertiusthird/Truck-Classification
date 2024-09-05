@@ -1,9 +1,5 @@
 # Truck-Classification
 
-# Projeto por Tertius Sudário Gomes Ferraz
-
-Desafio técnico para a vaga de ciêntista de dados Junior
-
 O objetivo do projeto é identificar caminhões que possuem o sistema de ar defeituoso antes deles quebrarem no meio de uma estrada ou em serviço, causando assim vários problemas. 
 
 Carregando duas base de dados, uma com dados de todos os anos anteriores, e a segunda com dados do ano de 2022. Como queremos avaliar o desempenho e o impacto financeiro caso o modelo estivesse em funcionamento no ano de 2022, Então devemos treinar nossos modelos com os dados dos anos anteriores e validar nesses dados. Apenas após isso que poderemos analisar o impacto no ano de 2022. Para isso, primeiro removemos do nosso dataframe dos anos anteriores as colunas (features) que possuiam mais de 10% de seus valores nulos, para evitar que tivesse baixa variância quando for realizado o tratamento dos valores nulos. Para ter consistência, como removemos essas colunas do primeiro dataset, também removemos as mesmas colunas do dataset de 2022. dividimos o dataset dos anos anteriores em 80% treino e 20% teste e apenas após esse passo podemos realizar o preenchimento de valores nulos para a média das colunas, assim evitando data leakage, Em seguida é realizado a padronização dos dados, para nenhuma coluna ser enviesar os modelos, devido a discrepância entre os valores máximos e mínimos entre os dados. Embora não seja necessário padronizar os dados para o modelo XGBOOST e o random forest, ainda há uma certa vantagem, pois o modelo pode convergir mais rápido. Também garante uma base de comparação consistente ao fazer comparações com outros modelos que precisam, neste nosso caso a regressão logística, mas também se quisermos expandir para comparar com outros modelos (SVM e modelos com base em redes neurais...)
